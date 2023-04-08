@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+Mayu
+juli:x
+:
  Hey there....
 =======
  Hey there
