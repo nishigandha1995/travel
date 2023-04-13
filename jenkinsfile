@@ -28,7 +28,6 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-
         stage('Code package') {
             steps {
                 echo 'Code packaging is in Progress!'
@@ -47,17 +46,17 @@ pipeline {
                 echo 'Hello, JDK'
                 sh 'java -version'
             }
-          }
+        }
         stage('Push Doker Image to AWS ECR') {
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
-			}
+		}
         stage('Push Doker Image to AWS ECR') {
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
-			}
+		}
         stage('Deploy APP to K8s Cluser') {
             steps {
                 echo 'Hello, JDK'
