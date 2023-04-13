@@ -53,12 +53,6 @@ pipeline {
                 sh 'java -version'
 			}
 		}
-        stage('Push Doker Image to AWS ECR') {
-            steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
-			}
-		}
         stage('Deploy APP to K8s Cluser') {
             steps {
                 echo 'Hello, JDK'
