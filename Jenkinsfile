@@ -7,7 +7,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven_3.8.8'
+        maven 'maven_3.8.7'
     }
 
     stages {
@@ -24,23 +24,45 @@ pipeline {
         stage('Code Compilation') {
             steps {
                 echo 'Code Compilation is In Progress!'
-                sh 'mvn --version'
+                sh 'mvn clean compile'
                 sh 'mvn clean compile'
             }
         }
 
-        stage('Code QA Execution') {
+        stage('Code package') {
             steps {
-                echo 'Junit Test case check in Progress!'
-                sh 'mvn --version'
-                sh 'mvn clean test'
+                echo 'Code packaging is in Progress!'
+                sh 'mvn clean package'
+                sh 'mvn clean package'
             }
         }
-        stage('Sonar Code Analysis') {
+        stage('Create docker image') {
             steps {
-                echo 'Creating War Artifact'
+                echo 'Hello JDX'
+                sh 'java -version'
+			}
+		}
+        stage('Docker Image to Docker HUB') {
+            steps {
+                echo 'Hello, JDK'
                 sh 'java -version'
             }
-        }
+          }
+        stage('Push Doker Image to AWS ECR') {
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+			}
+        stage('Push Doker Image to AWS ECR') {
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+			}
+        stage('Deploy APP to K8s Cluser') {
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+			}
+		}
     }
 }
