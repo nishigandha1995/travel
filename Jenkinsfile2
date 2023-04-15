@@ -4,7 +4,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
     }
 
-    agent any { label 'linux-agent-team-A' }
+    agent { label 'linux-agent-team-A' }
 
     tools {
         maven 'maven_3.8.8'
