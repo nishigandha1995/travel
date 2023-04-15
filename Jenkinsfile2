@@ -1,10 +1,10 @@
 pipeline {
 
     options {
-        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
+        buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
     }
 
-    agent any
+    agent any { label 'linux-agent-team-A' }
 
     tools {
         maven 'maven_3.8.8'
