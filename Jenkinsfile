@@ -78,5 +78,5 @@ pipeline {
                 echo 'Docker Image Scanning Started'
             }
         }
-    }
+
 }
