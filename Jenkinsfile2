@@ -51,7 +51,7 @@ pipeline {
                  sh 'whoami'
                  }
               }
-           }
+            }
         }
         stage(' Docker Image Push to Amazon ECR') {
            steps {
@@ -70,7 +70,6 @@ pipeline {
                  }
               }
            }
-        }
         stage('Upload Docker Images to Nexus') {
             steps {
                 echo 'Docker Image Scanning Started'
