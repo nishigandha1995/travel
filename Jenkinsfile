@@ -44,7 +44,7 @@ pipeline {
            steps {
               script {
                  withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
-                 sh 'docker login docker.io -u juli1995 -p ${ecr-credentials}'
+                 sh 'docker login docker.io -u juli1995 -p ${dockerhubCred}'
                  echo "Push Docker Image to DockerHub : In Progress"
                  sh 'docker push juli1995/travel:latest'
                  echo "Push Docker Image to DockerHub : In Progress"
