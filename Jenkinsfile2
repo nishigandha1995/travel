@@ -70,7 +70,7 @@ pipeline {
                  }
               }
            }
-		}
+        }
         stage('Upload Docker Images to Nexus') {
             steps {
                 echo 'Docker Image Scanning Started'
