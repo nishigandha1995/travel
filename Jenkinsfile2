@@ -71,14 +71,17 @@ pipeline {
               }
            }
         }
-        stage('Deploy APP to K8s Cluser') {
+        stage('Upload Docker Images to Nexus') {
             steps {
-                echo 'Hello, JDK'
+                echo 'Docker Image Scanning Started'
                 sh 'java -version'
-			}
-		}
+                echo 'Docker Image Scanning Started'
+            }
+        }
     }
 }
+
+
 
 
 
