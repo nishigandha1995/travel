@@ -67,23 +67,7 @@ pipeline {
                  docker push 559220132560.dkr.ecr.ap-south-1.amazonaws.com/travel:latest
                  echo "Push Docker Image to ECR : Completed"
                  """
-                 }
-              }
            }
-        }
-        stage('Upload Docker Images to Nexus') {
-            steps {
-                echo 'Docker Image Scanning Started'
-                sh 'java -version'
-                echo 'Docker Image Scanning Started'
-            }
         }
     }
 }
-
-
-
-
-
-
-
