@@ -41,7 +41,7 @@ pipeline {
             }
         }
         stage(' Docker push to Docker Hub') {
-           steps {
+            steps {
               script {
                  withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
                  sh 'docker login docker.io -u juli1995 -p ${dockerhubCred}'
@@ -51,10 +51,10 @@ pipeline {
                  sh 'whoami'
                  }
               }
-           }
+            }
         }
         stage(' Docker Image Push to Amazon ECR') {
-           steps {
+            steps {
               script {
                  withDockerRegistry([credentialsId:'ecr:ap-south-1:ecr-credentials', url:"https://559220132560.dkr.ecr.ap-south-1.amazonaws.com"]){
                  sh """
@@ -69,8 +69,8 @@ pipeline {
                  """
                  }
               }
-           }
-		}   
+            }
+        }/**
         stage('Upload Docker Images to Nexus') {
             steps {
                 echo 'Docker Image Scanning Started'
