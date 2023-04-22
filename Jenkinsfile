@@ -71,11 +71,17 @@ pipeline {
               }
            }
         }
-        stage('Upload Docker Images to Nexus') {
-            steps {
-                echo 'Docker Image Scanning Started'
-                sh 'java -version'
-                echo 'Docker Image Scanning Started'
+        stage('Upload the docker Image to Nexus') {
+           steps {
+              script {
+                 withCredentials([usernamePassword(credentialsId: 'nexus-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                 sh 'docker login http://13.233.119.191:8085/repository/travel/ -u admin -p ${PASSWORD}'
+                 echo "Push Docker Image to Nexus : In Progress"
+                 sh 'docker tag travelbooking-ms 13.233.119.191:8085/travel:latest'
+                 sh 'docker push 13.233.119.191:8085/travel'
+                 echo "Push Docker Image to Nexus : Completed"
+                 }
+              }
             }
         }
     }
