@@ -31,7 +31,7 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }***/
+        }***\
          stage('Code Package') {
             steps {
                 echo 'code packing is starting'
@@ -96,8 +96,8 @@ pipeline {
                  echo "Push Docker Image to Nexus : Completed"
                  }
               }
-           }
-        }***/
+            }
+        }***\
         stage ('Deploy App to K8s Cluster') {
             steps {
                 sh 'whoami'
@@ -106,5 +106,3 @@ pipeline {
         }
     }
 }
-
-
